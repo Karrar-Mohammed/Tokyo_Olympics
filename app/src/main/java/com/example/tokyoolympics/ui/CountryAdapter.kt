@@ -8,7 +8,7 @@ import com.example.tokyoolympics.R
 import com.example.tokyoolympics.data.Country
 import com.example.tokyoolympics.databinding.ItemCountryBinding
 
-class CountryAdapter(private val list: List<Country>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+class CountryAdapter(private val list: List<Country>, private val listener: CountryInteractionListener) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_country, parent, false)
         return CountryViewHolder(view)
@@ -18,11 +18,13 @@ class CountryAdapter(private val list: List<Country>) : RecyclerView.Adapter<Cou
         val currentCountry = list[position]
         holder.binding.apply {
             textRank.text = currentCountry.rank.toString()
-            textName.text = currentCountry.name
+            textCountryName.text = currentCountry.name
             textGoldMedal.text = currentCountry.goldMedal.toString()
             textSilverMedal.text = currentCountry.silverMedal.toString()
             textBronzeMedal.text = currentCountry.bronzeMedal.toString()
             textTotal.text = currentCountry.total.toString()
+            textCountryName.setOnClickListener { listener.onclickCountryName(currentCountry.name) }
+            root.setOnClickListener { listener.onClickItem(currentCountry) }
         }
     }
 
