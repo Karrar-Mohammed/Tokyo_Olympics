@@ -3,6 +3,7 @@ package com.example.tokyoolympics.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.tokyoolympics.R
 import com.example.tokyoolympics.data.Country
 import com.example.tokyoolympics.data.DataManager
 import com.example.tokyoolympics.databinding.ActivityMainBinding
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity(), CountryInteractionListener {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_TokyoOlympics)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup()
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity(), CountryInteractionListener {
     }
 
     override fun onClickItem(country: Country) {
-        val toastText = "${country.rank} ${country.name} gold: ${country.goldMedal} silver: ${country.silverMedal} bronze: ${country.bronzeMedal}"
+        val toastText = "${country.rank}- ${country.name} gold: ${country.goldMedal} silver: ${country.silverMedal} bronze: ${country.bronzeMedal}"
         Toast.makeText(applicationContext,toastText,Toast.LENGTH_LONG).show()
     }
 
