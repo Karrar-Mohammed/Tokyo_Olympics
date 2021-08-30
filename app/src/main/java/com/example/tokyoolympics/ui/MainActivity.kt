@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setup() {
         parseFile()
+        val adapter = CountryAdapter(DataManager.countries)
+        binding.recyclerCountry.adapter = adapter
     }
 
     private fun parseFile() {
