@@ -1,13 +1,14 @@
 package com.example.tokyoolympics.ui
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tokyoolympics.R
 import com.example.tokyoolympics.data.Country
-import com.example.tokyoolympics.ui.viewHolders.CountryViewHolder
+import com.example.tokyoolympics.databinding.ItemCountryBinding
 
-class CountryAdapter(val list: List<Country>) : RecyclerView.Adapter<CountryViewHolder>() {
+class CountryAdapter(private val list: List<Country>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_country, parent, false)
         return CountryViewHolder(view)
@@ -15,15 +16,19 @@ class CountryAdapter(val list: List<Country>) : RecyclerView.Adapter<CountryView
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         val currentCountry = list[position]
-        holder.apply {
-            rank.text = currentCountry.rank.toString()
-            countryName.text = currentCountry.name
-            goldMedal.text = currentCountry.goldMedal.toString()
-            silverMedal.text = currentCountry.silverMedal.toString()
-            bronzeMedal.text = currentCountry.bronzeMedal.toString()
-            total.text = currentCountry.total.toString()
+        holder.binding.apply {
+            textRank.text = currentCountry.rank.toString()
+            textName.text = currentCountry.name
+            textGoldMedal.text = currentCountry.goldMedal.toString()
+            textSilverMedal.text = currentCountry.silverMedal.toString()
+            textBronzeMedal.text = currentCountry.bronzeMedal.toString()
+            textTotal.text = currentCountry.total.toString()
         }
     }
 
     override fun getItemCount() = list.size
+
+    class CountryViewHolder(viewItem: View): RecyclerView.ViewHolder(viewItem) {
+        val binding = ItemCountryBinding.bind(viewItem)
+    }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tokyo Olympics</string>
+    <string name="gold_medal">gold medal</string>
+    <string name="silver_medal">silver medal</string>
+    <string name="bronze_medal">bronze medal</string>
+    <string name="total">TOTAL</string>
 </resources>

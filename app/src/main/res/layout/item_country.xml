@@ -88,7 +88,8 @@
             app:layout_constraintBottom_toTopOf="@+id/text_gold_medal"
             app:layout_constraintEnd_toEndOf="@+id/text_gold_medal"
             app:layout_constraintStart_toStartOf="@+id/text_gold_medal"
-            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+            app:layout_constraintTop_toBottomOf="@+id/text_name"
+            android:contentDescription="@string/gold_medal" />
 
         <ImageView
             android:id="@+id/image_silver_medal"
@@ -98,7 +99,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/image_gold_medal"
             app:layout_constraintEnd_toEndOf="@+id/text_silver_medal"
             app:layout_constraintStart_toStartOf="@+id/text_silver_medal"
-            app:layout_constraintTop_toTopOf="@+id/image_gold_medal" />
+            app:layout_constraintTop_toTopOf="@+id/image_gold_medal"
+            android:contentDescription="@string/silver_medal" />
 
         <ImageView
             android:id="@+id/image_bronze_medal"
@@ -108,13 +110,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/image_silver_medal"
             app:layout_constraintEnd_toEndOf="@+id/text_bronze_medal"
             app:layout_constraintStart_toStartOf="@+id/text_bronze_medal"
-            app:layout_constraintTop_toTopOf="@+id/image_silver_medal" />
+            app:layout_constraintTop_toTopOf="@+id/image_silver_medal"
+            android:contentDescription="@string/bronze_medal" />
 
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TOTAL"
+            android:text="@string/total"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/image_bronze_medal"
             app:layout_constraintEnd_toEndOf="@+id/text_total"
