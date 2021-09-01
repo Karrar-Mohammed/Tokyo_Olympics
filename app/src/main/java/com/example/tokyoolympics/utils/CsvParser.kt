@@ -12,9 +12,7 @@ object CsvParser {
             goldMedal = tokens[Constants.ColumnIndex.GOLD_MEDAL].toInt(),
             silverMedal = tokens[Constants.ColumnIndex.SILVER_MEDAL].toInt(),
             bronzeMedal = tokens[Constants.ColumnIndex.BRONZE_MEDAL].toInt(),
-            total = tokens[Constants.ColumnIndex.TOTAL].toInt(),
-            rankByTotal = tokens[Constants.ColumnIndex.RANK_BY_TOTAL].toInt(),
-            nocCode = tokens[Constants.ColumnIndex.NOC_CODE]
+            total = tokens[Constants.ColumnIndex.TOTAL].toInt()
         )
     }
 }

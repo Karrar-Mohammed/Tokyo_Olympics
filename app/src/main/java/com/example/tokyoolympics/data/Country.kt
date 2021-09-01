@@ -6,7 +6,5 @@ data class Country(
     val goldMedal: Int,
     val silverMedal: Int,
     val bronzeMedal: Int,
-    val total: Int,
-    val rankByTotal: Int,
-    val nocCode: String
+    val total: Int
 )
