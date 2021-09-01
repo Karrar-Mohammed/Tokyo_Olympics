@@ -4,7 +4,7 @@ import com.example.tokyoolympics.data.Country
 
 object CsvParser {
     fun parse(line: String): Country {
-        val tokens = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)".toRegex()).toMutableList()
+        val tokens = line.split(",")
 
         return Country(
             rank = tokens[Constants.ColumnIndex.RANK].toInt(),
